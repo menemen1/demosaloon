@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blade & Style | Berber & Kuaför — Kadıköy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Blade & Style</a>
+      <nav class="nav">
+        <a href="#hizmetler">Ne Yapıyoruz</a>
+        <a href="#galeri">Salon</a>
+        <a href="#hakkimizda">Hikayemiz</a>
+        <a href="#iletisim">Ulaşın</a>
+      </nav>
+      <a href="randevu.html" class="btn btn-primary">Randevu Al</a>
+      <button class="menu-toggle" aria-label="Menüyü aç">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero-bg"
+        src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1800&q=80"
+        alt="Berber salonu iç mekanı — makas ve ayna"
+        loading="eager"
+      >
+      <div class="hero-shade"></div>
+      <div class="container hero-inner">
+        <p class="hero-kicker">Kadıköy Moda · Berber & Kuaför</p>
+        <h1>Kapıdan girince<br>kendin gibi hisset.</h1>
+        <p class="hero-lead">Saç, sakal, boya… Hepsini burada, acele etmeden yapıyoruz. Kahveni al, koltuğa otur — gerisini biz hallederiz.</p>
+        <a href="randevu.html" class="btn btn-primary btn-lg">Randevu Al</a>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <div class="container intro-grid">
+        <img
+          src="hairsaloon.jpg"
+          alt="Berber müşteriye saç kesiyor"
+          class="intro-photo"
+          loading="lazy"
+        >
+        <div class="intro-text">
+          <h2>12 yıldır aynı sokakta,<br>aynı özenle.</h2>
+          <p>Moda Caddesi'ndeki dükkanımızda her gün birbirinden farklı yüzler görüyoruz — öğrenciden emekliye, ilk kesimden düğün tıraşına. Hepsine aynı dikkati gösteriyoruz.</p>
+          <p class="intro-note">Randevu alırsan beklemeden oturursun. Yoksa bazen 15–20 dk beklemen gerekebilir, haberin olsun.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hizmetler" class="services section">
+      <div class="container">
+        <header class="section-top">
+          <h2>Ne yapıyoruz?</h2>
+          <p>Fiyatlar net, sürpriz yok. Aşağıda gördüğün her şeyi salonumuzda gerçekten yapıyoruz.</p>
+        </header>
+
+        <article class="service-row">
+          <figure class="service-photo">
+            <img src="sackesim.jpg" alt="Saç kesimi" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <h3>Saç Kesimi</h3>
+            <p>Önce konuşuruz — nasıl bir şey istediğini, günlük hayatını, ne kadar uğraşmak istediğini. Sonra keseriz. Makas ve makine, ikisi de.</p>
+            <span class="price">₺250</span>
+          </div>
+        </article>
+
+        <article class="service-row reverse">
+          <figure class="service-photo">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&q=80" alt="Sakal tıraşı" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <h3>Sakal & Tıraş</h3>
+            <p>Sıcak havlu, köpük, jilet. Sakal hattını yüzüne göre çizeriz — abartmadan, senin tarzına uygun.</p>
+            <span class="price">₺200</span>
+          </div>
+        </article>
+
+        <article class="service-row">
+          <figure class="service-photo">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=80" alt="Saç boyama" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <h3>Saç Boyama & Bakım</h3>
+            <p>Doğal ton düzeltmeden tam renk değişimine. Boyadan önce saçının durumuna bakarız, gerekiyorsa bakım öneririz.</p>
+            <span class="price">₺350'den</span>
+          </div>
+        </article>
+
+        <article class="service-row reverse">
+          <figure class="service-photo">
+            <img src="cocukfoto.jpg" alt="Çocuk saç kesimi" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <h3>Çocuk Kesimi</h3>
+            <p>Küçükler için sabırlıyız. İlk kez gelen çocuklar biraz ürkebilir — o zaman yavaş gideriz, sorun değil.</p>
+            <span class="price">₺150</span>
+          </div>
+        </article>
+
+        <div class="service-extra">
+          <p><strong>Saç + Sakal birlikte</strong> alırsan ₺400 — en çok tercih edilen bu zaten.</p>
+          <a href="randevu.html" class="btn btn-primary">Randevu Al</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeri" class="gallery section">
+      <div class="container">
+        <header class="section-top">
+          <h2>Salonumuzdan kareler</h2>
+          <p>Gelmeden önce bir göz at — aynı yer, aynı ekip.</p>
+        </header>
+        <div class="gallery-grid">
+          <img src="sal1.jpg" alt="Salon iç mekanı" loading="lazy">
+          <img src="sal2.jpg" alt="Berber aletleri" loading="lazy">
+          <img src="sal3.jpg" alt="Saç şekillendirme" loading="lazy">
+          <img src="sal4.jpg" alt="Müşteri saç kesimi" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=700&q=80" alt="Berber dükkanı" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?w=700&q=80" alt="Saç yıkama" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="hakkimizda" class="about section">
+      <div class="container about-wrap">
+        <div class="about-photos">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=700&q=80" alt="Salon girişi" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1593702274477-b9f5625b4a28?w=500&q=80" alt="Mehmet Usta çalışırken" loading="lazy" class="about-photo-small">
+        </div>
+        <div class="about-text">
+          <h2>Biz kimiz?</h2>
+          <p>Mehmet, Ali ve Can — üç usta, bir dükkan. 2012'den beri Moda'dayız. Birçoğu yıllardır geliyor; bazıları çocukken gelmiş, şimdi babasıyla birlikte geliyor.</p>
+          <p>Salonumuz küçük ama samimi. Müzik açık, sohbet serbest. İstersen sessiz oturursun, o da tamam.</p>
+          <ul class="team-list">
+            <li><strong>Mehmet Usta</strong> — saç kesimi & boya</li>
+            <li><strong>Ali Usta</strong> — sakal & tıraş</li>
+            <li><strong>Can Usta</strong> — genel, çocuk kesimi</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim" class="contact section">
+      <div class="container contact-wrap">
+        <div class="contact-text">
+          <h2>Gel, tanışalım</h2>
+          <div class="contact-block">
+            <strong>Adres</strong>
+            <p>Caferağa Mah. Moda Cad. No:42<br>Kadıköy, İstanbul</p>
+          </div>
+          <div class="contact-block">
+            <strong>Telefon</strong>
+            <p><a href="tel:+902165551234">0216 555 12 34</a></p>
+          </div>
+          <div class="contact-block">
+            <strong>Saatler</strong>
+            <p>Pazartesi – Cumartesi: 09:00 – 20:00<br>Pazar: 10:00 – 18:00</p>
+          </div>
+          <a href="randevu.html" class="btn btn-primary">Online Randevu</a>
+        </div>
+        <figure class="contact-photo">
+          <img src="hairsaloon.jpg" alt="Moda caddesinde berber salonu" loading="lazy">
+          <figcaption>Moda Caddesi'nde, tramvaya 3 dk yürüme mesafesinde.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Blade & Style</span>
+      <p>© 2026 · Kadıköy, İstanbul</p>
+      <div class="footer-links">
+        <a href="randevu.html">Randevu</a>
+        <a href="yonetim.html">Salon Yönetimi</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

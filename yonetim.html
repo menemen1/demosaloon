@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon Yönetimi | Blade & Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Blade & Style</a>
+      <a href="index.html" class="btn btn-outline">← Siteye Dön</a>
+    </div>
+  </header>
+
+  <main class="admin-page section">
+    <div class="container admin-wrap">
+      <h1>Salon Yönetimi</h1>
+      <p class="admin-desc">Dolu günleri gör, manuel kapat veya randevuyu geri aç. (Veriler tarayıcıda saklanır.)</p>
+
+      <section class="admin-block">
+        <h2>Manuel gün kapat</h2>
+        <div class="admin-row">
+          <input type="date" id="blockDateInput">
+          <button type="button" id="blockDateBtn" class="btn btn-primary">Günü Kapat</button>
+        </div>
+      </section>
+
+      <section class="admin-block">
+        <h2>Kayıtlı randevular & dolu günler</h2>
+        <div id="adminBookingsList" class="admin-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="bookings.js"></script>
+  <script>
+    function renderAdmin() {
+      const list = document.getElementById('adminBookingsList');
+      const bookings = getBookings();
+
+      if (bookings.length === 0) {
+        list.innerHTML = '<p class="empty-msg">Henüz randevu yok.</p>';
+        return;
+      }
+
+      list.innerHTML = bookings.map(b => `
+        <div class="admin-item">
+          <div>
+            <strong>${b.name}</strong> — ${formatDateTR(b.date)} saat ${b.time}
+            <br><span class="muted">${b.service} · ${b.phone}</span>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm" data-date="${b.date}" data-id="${b.id}">Günü Aç</button>
+        </div>
+      `).join('');
+
+      list.querySelectorAll('button[data-date]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          removeBookingByDate(btn.dataset.date);
+          renderAdmin();
+        });
+      });
+    }
+
+    document.getElementById('blockDateBtn').addEventListener('click', () => {
+      const input = document.getElementById('blockDateInput');
+      const date = input.value;
+      if (!date) return;
+
+      if (isDateBlocked(date)) {
+        alert('Bu gün zaten dolu.');
+        return;
+      }
+
+      addBooking({ name: 'Manuel kapatıldı', date, time: '—', service: '—', phone: '—', manual: true });
+      input.value = '';
+      renderAdmin();
+    });
+
+    renderAdmin();
+  </script>
+</body>
+</html>

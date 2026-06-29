@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randevu Al | Blade & Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Blade & Style</a>
+      <nav class="nav">
+        <a href="index.html#hizmetler">Ne Yapıyoruz</a>
+        <a href="index.html#galeri">Salon</a>
+        <a href="index.html#iletisim">Ulaşın</a>
+      </nav>
+      <a href="randevu.html" class="btn btn-primary active">Randevu Al</a>
+      <button class="menu-toggle" aria-label="Menüyü aç">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="appointment-page">
+    <section class="appointment-hero">
+      <img
+        src="hairsaloon.jpg"
+        alt="Randevu"
+        class="appointment-hero-img"
+        loading="eager"
+      >
+      <div class="appointment-hero-shade"></div>
+      <div class="container appointment-hero-text">
+        <a href="index.html" class="back-link">← Ana sayfa</a>
+        <h1>Randevu al</h1>
+        <p>Formu doldur, tarihini seç. Dolu günler listede kapalı görünür.</p>
+      </div>
+    </section>
+
+    <section class="appointment-section section">
+      <div class="container appointment-layout">
+        <form id="appointmentForm" class="appointment-form" novalidate>
+          <div class="form-group">
+            <label for="name">Adın soyadın</label>
+            <input type="text" id="name" name="name" placeholder="Örn. Ahmet Yılmaz" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="05XX XXX XX XX" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-posta <span class="optional">(zorunlu değil)</span></label>
+              <input type="email" id="email" name="email" placeholder="ornek@email.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Ne yaptırmak istiyorsun?</label>
+            <select id="service" name="service" required>
+              <option value="">Seç...</option>
+              <option value="sac-kesimi">Saç Kesimi — ₺250</option>
+              <option value="sakal-tiras">Sakal & Tıraş — ₺200</option>
+              <option value="paket">Saç + Sakal — ₺400</option>
+              <option value="boyama">Saç Boyama — ₺350</option>
+              <option value="bakim">Saç Bakımı — ₺300</option>
+              <option value="cocuk">Çocuk Kesimi — ₺150</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Tarih seç</label>
+            <input type="hidden" id="date" name="date" required>
+            <div id="calendar" class="calendar" aria-label="Takvim"></div>
+            <p id="dateError" class="form-error hidden">Bu tarih dolu — başka bir gün seç lütfen.</p>
+            <p id="dateSelected" class="date-selected hidden"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Saat</label>
+            <select id="time" name="time" required>
+              <option value="">Saat seç...</option>
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="barber">Kimin kesmesini istersin? <span class="optional">(fark etmez de olur)</span></label>
+            <select id="barber" name="barber">
+              <option value="">Fark etmez</option>
+              <option value="mehmet">Mehmet Usta</option>
+              <option value="ali">Ali Usta</option>
+              <option value="can">Can Usta</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Eklemek istediğin bir şey var mı?</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Örn. kısa kesim, sakal hattı yukarıda kalsın..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-full">Randevuyu gönder</button>
+        </form>
+
+        <aside class="appointment-aside">
+          <img
+            src="https://images.unsplash.com/photo-1633680218800-9b55313f4e58?w=600&q=80"
+            alt="Salon içi"
+            loading="lazy"
+          >
+          <div class="aside-note">
+            <h3>Bilmen iyi olur</h3>
+            <p>Randevu aldığında o gün takvimde kapanır — başkası aynı güne alamaz.</p>
+            <p>5 dk erken gel, kahven hazır olsun. İptal için en az 2 saat önce ara: <a href="tel:+902165551234">0216 555 12 34</a></p>
+          </div>
+          <div id="blockedDatesList" class="blocked-list hidden">
+            <h4>Dolu günler</h4>
+            <ul id="blockedDatesUl"></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div id="successModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <h2>Tamam, kaydettik!</h2>
+        <p id="successMessage"></p>
+        <div class="modal-actions">
+          <a href="index.html" class="btn btn-primary">Ana sayfa</a>
+          <button type="button" class="btn btn-outline" id="newAppointment">Başka randevu</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Blade & Style</span>
+      <p>© 2026 · Kadıköy, İstanbul</p>
+      <div class="footer-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="yonetim.html">Salon Yönetimi</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="bookings.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
